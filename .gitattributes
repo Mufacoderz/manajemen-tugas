@@ -1,5 +1,7 @@
 * text=auto eol=lf
 
+public/sbadmin2/** binary
+
 *.blade.php diff=html
 *.css diff=css
 *.html diff=html
