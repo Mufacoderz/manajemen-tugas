@@ -11,3 +11,6 @@ public/sbadmin2/** binary
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
+
+*.html linguist-detectable=false
+*.css  linguist-detectable=false
