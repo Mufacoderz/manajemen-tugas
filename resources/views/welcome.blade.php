@@ -43,7 +43,7 @@
     <header id="header" class="header d-flex align-items-center sticky-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-            <a href="index.html" class="logo d-flex align-items-center me-auto">
+            <a href="#" class="logo d-flex align-items-center me-auto">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.png" alt=""> -->
                 <h1 class="sitename">M-Tugas</h1>
@@ -60,7 +60,7 @@
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
-            <a class="btn-getstarted" href="index.html#about">login</a>
+            <a class="btn-getstarted" href="{{ route('login') }}">login</a>
 
         </div>
     </header>
@@ -77,7 +77,7 @@
                         <h1>M-Tugas</h1>
                         <p>Aplikasi manajemen tugas</p>
                         <div class="d-flex">
-                            <a href="#about" class="btn-get-started"> Login</a>
+                            <a href="{{ route('login') }}" class="btn-get-started"> Login</a>
 
                         </div>
                     </div>
