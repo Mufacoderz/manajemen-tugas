@@ -67,8 +67,8 @@
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+            <li class="nav-item {{ $menuAdminTugas ?? ''}}">
+                <a class="nav-link" href="{{ route('tugas') }}">
                     <i class="fas fa-tasks"></i>
                     <span>Data Tugas</span></a>
             </li>
