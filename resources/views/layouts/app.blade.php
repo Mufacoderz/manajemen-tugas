@@ -222,8 +222,26 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('sbadmin2/js/demo/datatables-demo.js') }}"></script>
 
-    <script src="{{ asset('sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
 
+    <script src="{{ asset('sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
+    @session('success')
+        <script>
+            Swal.fire({
+                title: "Sukses!",
+                text: "{{ session('success') }}",
+                icon: "success"
+            });
+        </script>
+    @endsession
+    @session('error')
+        <script>
+            Swal.fire({
+                title: "Gagal!!",
+                text: "{{ session('error') }}",
+                icon: "error"
+            });
+        </script>
+    @endsession
 </body>
 
 </html>
