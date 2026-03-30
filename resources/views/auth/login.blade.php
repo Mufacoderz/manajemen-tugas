@@ -38,17 +38,36 @@
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4"><i class="fas fa-tasks mr-2"></i> M-Tugas | Login</h1>
+                                        <h1 class="h4 text-gray-900 mb-4"><i class="fas fa-tasks mr-2"></i> M-Tugas |
+                                            Login</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" method="POST" action="{{ route('loginProses') }}">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                placeholder="Masukkan email anda..." name="email">
+                                            <input type="email"
+                                                class="form-control form-control-user @error('email') is-invalid @enderror"
+                                                placeholder="Masukkan email anda..." name="email"
+                                                value={{ old('email') }}>
+                                            @error('email')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
+
+
+
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="masukkan password anda..." name="password">
+                                            <input type="password"
+                                                class="form-control form-control-user @error('password') is-invalid @enderror"
+                                                id="exampleInputPassword" placeholder="masukkan password anda..."
+                                                name="password">
+
+
+                                            @error('password')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
+
+
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
@@ -64,7 +83,7 @@
                                     </form>
                                     <div class="text-center">
                                         <small>Kembali ke beranda?
-                                        <a class="small" href="{{ route('welcome') }}">Klik disini</a>
+                                            <a class="small" href="{{ route('welcome') }}">Klik disini</a>
                                         </small>
                                     </div>
 
@@ -88,6 +107,25 @@
     <script src="{{ asset('sbadmin2/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('sbadmin2/js/sb-admin-2.min.js') }}"></script>
+    <script src="{{ asset('sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
+    @session('success')
+        <script>
+            Swal.fire({
+                title: "Sukses!",
+                text: "{{ $message }}",
+                icon: "success"
+            });
+        </script>
+    @endsession
+    @session('error')
+        <script>
+            Swal.fire({
+                title: "Gagal!!",
+                text: "{{ session('error') }}",
+                icon: "error"
+            });
+        </script>
+    @endsession
 
 </body>
 

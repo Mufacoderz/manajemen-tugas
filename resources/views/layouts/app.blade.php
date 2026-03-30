@@ -45,7 +45,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item {{ $menuDashboard ?? ''}}">
+            <li class="nav-item {{ $menuDashboard ?? '' }}">
                 <a class="nav-link" href="{{ route('dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -60,14 +60,14 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item {{ $menuAdminUser ?? ''}}">
-                <a class="nav-link" href="{{route('user')}}">
+            <li class="nav-item {{ $menuAdminUser ?? '' }}">
+                <a class="nav-link" href="{{ route('user') }}">
                     <i class="fas fa-user"></i>
                     <span>Data User</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item {{ $menuAdminTugas ?? ''}}">
+            <li class="nav-item {{ $menuAdminTugas ?? '' }}">
                 <a class="nav-link" href="{{ route('tugas') }}">
                     <i class="fas fa-tasks"></i>
                     <span>Data Tugas</span></a>
@@ -221,6 +221,9 @@
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('sbadmin2/js/demo/datatables-demo.js') }}"></script>
+
+    <script src="{{ asset('sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
+
 </body>
 
 </html>
