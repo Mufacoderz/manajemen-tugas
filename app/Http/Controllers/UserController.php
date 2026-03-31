@@ -24,4 +24,23 @@ class UserController extends Controller
         );
         return view('admin/user/create', $data);
     }
+    public function store(Request $request)
+    {
+        // dd($request);
+        $request->validate([
+            'nama'         => 'required',
+            'email'        => 'required|email|unique:users,email',
+            'jabatan'      => 'required',
+            'password'     => 'required|confirmed|min:8',
+        ],[
+            'nama.required'         => 'Nama harus diisi',
+            'email.required'        => 'Email harus diisi',
+            'email.email'           => 'Email tidak valid',
+            'email.unique'          => 'Email sudah digunakan',
+            'jabatan.required'      => 'Jabatan harus dipilih',
+            'password.required'     => 'Password harus diisi',
+            'password.confirmed'    => 'Konfirmasi password tidak cocok',
+            'password.min'          => 'Password minimal 8 karakter',
+        ]);
+    }
 }
