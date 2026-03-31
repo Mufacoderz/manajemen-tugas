@@ -40,26 +40,31 @@
                                     </thead>
 
                                     <tbody>
-                                        <tr>
-                                            <td class="text-center">1</td>
-                                            <td>Flaid</td>
-                                            <td>Flaid@example.com</td>
-                                            <td class="text-center">
-                                                <span class="badge badge-dark badge-pill">System Architect</span>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-danger badge-pill">Belum Ditugaskan</span>
-
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="#" class="btn btn-sm btn-warning">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-sm btn-danger">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        @foreach($user as $item)
+                                            <tr>
+                                                <td class="text-center">{{ $loop->iteration }}</td>
+                                                <td>{{ $item->nama }}</td>
+                                                <td>{{ $item->email }}</td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-dark badge-pill">{{ $item->jabatan }}</span>
+                                                </td>
+                                                <td>
+                                                    @if($item->is_tugas)
+                                                        <span class="badge badge-success badge-pill">Sudah Ditugaskan</span>
+                                                    @else
+                                                        <span class="badge badge-danger badge-pill">Belum Ditugaskan</span>
+                                                    @endif
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-sm btn-warning">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-danger">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

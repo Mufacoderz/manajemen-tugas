@@ -11,17 +11,20 @@ Route::get('/', function () {
 })->name('welcome');
 
 
-
+//login logout
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'loginProses'])->name('loginProses');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('checkLogin')->group(function () {
 
+    //dashboard
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    //user
     Route::get('user', [UserController::class, 'index'])->name('user');
 
+    //tugas
     Route::get('tugas', [TugasController::class, 'index'])->name('tugas');
 });
 
