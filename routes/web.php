@@ -14,9 +14,10 @@ Route::get('/', function () {
 
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'loginProses'])->name('loginProses');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('checkLogin')->group(function () {
-    
+
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('user', [UserController::class, 'index'])->name('user');
