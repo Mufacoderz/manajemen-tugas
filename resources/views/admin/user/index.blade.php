@@ -9,7 +9,7 @@
     <div class="card">
         <div class="card-header  d-flex flex-wrap justify-content-center justify-content-xl-between">
             <div class="mb-1 mr-2">
-                <a href="#" class="btn btn-sm btn-primary">
+                <a href="{{ route('userCreate') }}" class="btn btn-sm btn-primary">
                     <i class="fas fa-plus mr-2"></i> Tambah User
                 </a>
             </div>
@@ -65,7 +65,7 @@
                                                         <span class="badge badge-danger badge-pill">Belum Ditugaskan</span>
                                                     @endif
                                                 </td>
-                                                
+
                                                 <td class="text-center">
                                                     <a href="#" class="btn btn-sm btn-warning">
                                                         <i class="fas fa-edit"></i>

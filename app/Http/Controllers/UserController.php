@@ -16,4 +16,12 @@ class UserController extends Controller
         );
         return view('admin/user/index', $data);
     }
+    public function create()
+    {
+        $data = array(
+            'title'         => 'Tambah Data User',
+            'menuAdminUser' => 'active',
+        );
+        return view('admin/user/create', $data);
+    }
 }
