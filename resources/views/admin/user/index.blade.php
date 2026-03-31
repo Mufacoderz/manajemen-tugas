@@ -43,11 +43,21 @@
                                         @foreach($user as $item)
                                             <tr>
                                                 <td class="text-center">{{ $loop->iteration }}</td>
+
                                                 <td>{{ $item->nama }}</td>
-                                                <td>{{ $item->email }}</td>
-                                                <td class="text-center">
-                                                    <span class="badge badge-dark badge-pill">{{ $item->jabatan }}</span>
+
+                                                <td>
+                                                    <span class="badge badge-info">{{ $item->email }}</span>
                                                 </td>
+
+                                                <td class="text-center">
+                                                    @if($item->jabatan == 'Admin')
+                                                        <span class="badge badge-success badge-pill">Admin</span>
+                                                    @else
+                                                        <span class="badge badge-secondary badge-pill">User</span>
+                                                    @endif
+                                                </td>
+
                                                 <td>
                                                     @if($item->is_tugas)
                                                         <span class="badge badge-success badge-pill">Sudah Ditugaskan</span>
@@ -55,6 +65,7 @@
                                                         <span class="badge badge-danger badge-pill">Belum Ditugaskan</span>
                                                     @endif
                                                 </td>
+                                                
                                                 <td class="text-center">
                                                     <a href="#" class="btn btn-sm btn-warning">
                                                         <i class="fas fa-edit"></i>
